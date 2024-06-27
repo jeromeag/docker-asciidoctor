@@ -93,6 +93,7 @@ RUN apk add --no-cache \
 
 ARG asciidoctor_confluence_version=0.0.2
 ARG asciidoctor_diagram_version=3.0.1
+ARG asciidoctor_defmastership_version=1.0.7
 ARG asciidoctor_epub3_version=2.2.0
 ARG asciidoctor_fb2_version=0.8.0
 ARG asciidoctor_mathematical_version=0.3.5
@@ -108,6 +109,7 @@ ARG chunky_png_version=1.4.0
 
 ENV ASCIIDOCTOR_CONFLUENCE_VERSION=${asciidoctor_confluence_version} \
   ASCIIDOCTOR_DIAGRAM_VERSION=${asciidoctor_diagram_version} \
+  ASCIIDOCTOR_DEFMASTERSHIP_VERSION=${asciidoctor_defmastership_version} \
   ASCIIDOCTOR_EPUB3_VERSION=${asciidoctor_epub3_version} \
   ASCIIDOCTOR_FB2_VERSION=${asciidoctor_fb2_version} \
   ASCIIDOCTOR_MATHEMATICAL_VERSION=${asciidoctor_mathematical_version} \
@@ -134,6 +136,7 @@ RUN apk add --no-cache --virtual .rubymakedepends \
   "asciidoctor-diagram-ditaamini:1.0.3" `# Used by asciidoctor-diagram` \
   # TODO: track with updatecli
   "asciidoctor-diagram-plantuml:1.2025.2" `# Used by asciidoctor-diagram` \
+  "asciidoctor-defmastership:${ASCIIDOCTOR_DEFMASTERSHIP_VERSION}" \
   "asciidoctor-epub3:${ASCIIDOCTOR_EPUB3_VERSION}" \
   "asciidoctor-fb2:${ASCIIDOCTOR_FB2_VERSION}" \
   "asciidoctor-mathematical:${ASCIIDOCTOR_MATHEMATICAL_VERSION}" \
