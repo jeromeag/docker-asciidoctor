@@ -13,6 +13,8 @@ ASCIIDOCTOR_REVEALJS_VERSION=5.2.0
 KRAMDOWN_ASCIIDOC_VERSION=2.1.1
 ASCIIDOCTOR_BIBTEX_VERSION=0.9.0
 ASCIIDOCTOR_KROKI_VERSION=0.10.0
+ASCIIDOCTOR_DEFMASTERSHIP_VERSION=1.3.3
+DEFMASTERSHIP_VERSION=1.3.4
 DOCKER_IMAGE_NAME_TO_TEST="${IMAGE_NAME:-asciidoctor}"
 
 clean_generated_files() {
@@ -329,4 +331,32 @@ teardown() {
       /documents/fixtures/sample-with-rubyeval.adoc
 
   [ "${status}" -eq 0 ]
+}
+  
+@test "We can produce a website with defmastership definitions" {
+  docker run -t --rm \
+    -v "${BATS_TEST_DIRNAME}":/documents/ \
+    "${DOCKER_IMAGE_NAME_TO_TEST}" \
+      asciidoctor -r asciidoctor-defmastership \
+      -o /documents/tmp/sample-with-defmastership.html \
+      /documents/fixtures/sample-with-defmastership.adoc
+  grep 'class="paragraph define' ${TMP_GENERATION_DIR}/sample-with-defmastership.html
+}
+
+@test "defmastership is installed and in version ${DEFMASTERSHIP_VERSION}" {
+  docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" defmastership --version \
+    | grep "defmastership" | grep "${Defmastership_VERSION}"
+}
+
+@test "asciidoctor-defmastership is installed as a gem with the version ${ASCIIDOCTOR_DEFMASTERSHIP_VERSION}" {
+  docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" gem list \
+    | grep "asciidoctor-defmastership" | grep "${ASCIIDOCTOR_DEFMASTERSHIP_VERSION}"
+}
+
+@test "We can export defmastership definitions in csv" {
+  docker run -t --rm \
+    -v "${BATS_TEST_DIRNAME}":/documents/ \
+    "${DOCKER_IMAGE_NAME_TO_TEST}" \
+      defmastership export \
+      /documents/fixtures/sample-with-defmastership.adoc
 }

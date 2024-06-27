@@ -30,6 +30,12 @@ This Docker image provides:
 
 - [Asciidoctor Reducer](https://github.com/asciidoctor/asciidoctor-reducer) 1.0.2
 
+- [Asciidoctor Rubyeval](https://gitlab.com/defmastership/asciidoctor-rubyeval) 1.0.0
+
+- [Asciidoctor Defmastership](https://gitlab.com/defmastership/asciidoctor-defmastership) 1.3.3
+
+- [Defmastership](https://gitlab.com/defmastership/defmastership) 1.3.4
+
 This image uses Alpine Linux 3.21.0 as base image.
 
 > [!NOTE]
