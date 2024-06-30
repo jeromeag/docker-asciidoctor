@@ -1,0 +1,4 @@
+= Simple definition example
+
+[define, whatever, WHATEVER-0001]
+Simplest ever definition.
