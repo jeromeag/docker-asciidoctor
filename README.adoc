@@ -3,6 +3,7 @@
 :ASCIIDOCTOR_CONFLUENCE_VERSION: 0.0.2
 :ASCIIDOCTOR_PDF_VERSION: 2.3.19
 :ASCIIDOCTOR_DIAGRAM_VERSION: 2.3.1
+:ASCIIDOCTOR_DEFMASTERSHIP_VERSION: 1.0.7
 :ASCIIDOCTOR_EPUB3_VERSION: 2.1.3
 :ASCIIDOCTOR_FB2_VERSION: 0.7.0
 :ASCIIDOCTOR_MATHEMATICAL_VERSION: 0.3.5
@@ -38,6 +39,7 @@ This Docker image provides:
 * https://github.com/Mogztter/asciidoctor-kroki[Asciidoctor Kroki] {ASCIIDOCTOR_KROKI_VERSION}
 * https://github.com/asciidoctor/asciidoctor-reducer[Asciidoctor Reducer] {ASCIIDOCTOR_REDUCER_VERSION}
 * https://gitlab.com/defmastership/asciidoctor-rubyeval[Asciidoctor Rubyeval] {ASCIIDOCTOR_RUBYEVAL_VERSION}
+* https://gitlab.com/defmastership/asciidoctor-defmastership[Asciidoctor DefMastership] {ASCIIDOCTOR_DEFMASTERSHIP_VERSION}
 
 This image uses Alpine Linux {ALPINE_VERSION} as base image.
 
@@ -116,6 +118,15 @@ asciidoctor-revealjs -r asciidoctor-diagram sample-slides.adoc
 ----
 asciidoctor-revealjs -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2 sample-slides.adoc
 asciidoctor-revealjs -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2 -r asciidoctor-diagram sample-slides.adoc
+----
+
+* To run AsciiDoc on an AsciiDoc file that contains Defmastership blocks:
++
+[source,bash]
+----
+asciidoctor -r asciidoctor/defmastership sample-with-defmastership.adoc
+asciidoctor-pdf -r asciidoctor/defmastership sample-with-defmastership.adoc
+asciidoctor-epub3 -r asciidoctor/defmastership sample-with-defmastership.adoc
 ----
 
 * To convert files in batch:
