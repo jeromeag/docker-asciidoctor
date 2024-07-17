@@ -93,7 +93,7 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 
 ARG asciidoctor_confluence_version=0.0.2
 ARG asciidoctor_diagram_version=2.3.1
-ARG asciidoctor_defmastership_version=1.0.7
+ARG asciidoctor_defmastership_version=1.0.8
 ARG asciidoctor_epub3_version=2.1.3
 ARG asciidoctor_fb2_version=0.7.0
 ARG asciidoctor_mathematical_version=0.3.5
