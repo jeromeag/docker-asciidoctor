@@ -320,3 +320,13 @@ teardown() {
   docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" which lilypond
   docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" lilypond --version
 }
+
+@test "We can generate HTML documents with ruby evaluations" {
+  run docker run -t --rm \
+    -v "${BATS_TEST_DIRNAME}":/documents/ \
+    "${DOCKER_IMAGE_NAME_TO_TEST}" \
+      asciidoctor --trace -D /documents/tmp -r asciidoctor-rubyeval \
+      /documents/fixtures/sample-with-rubyeval.adoc
+
+  [ "${status}" -eq 0 ]
+}
