@@ -30,7 +30,7 @@ This Docker image provides:
 
 - [Asciidoctor Reducer](https://github.com/asciidoctor/asciidoctor-reducer) 1.0.2
 
-- [Asciidoctor DefMastership](https://gitlab.com/defmastership/asciidoctor-defmastership) 1.0.10
+- [Asciidoctor DefMastership](https://gitlab.com/defmastership/asciidoctor-defmastership) 1.1.0
 
 This image uses Alpine Linux 3.21.0 as base image.
 
