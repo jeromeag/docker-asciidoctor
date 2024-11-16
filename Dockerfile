@@ -94,6 +94,7 @@ RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 ARG asciidoctor_confluence_version=0.0.2
 ARG asciidoctor_diagram_version=2.3.1
 ARG asciidoctor_defmastership_version=1.1.0
+ARG defmastership_version=1.1.0
 ARG asciidoctor_epub3_version=2.1.3
 ARG asciidoctor_fb2_version=0.7.0
 ARG asciidoctor_mathematical_version=0.3.5
@@ -110,6 +111,7 @@ ARG chunky_png_version=1.4.0
 ENV ASCIIDOCTOR_CONFLUENCE_VERSION=${asciidoctor_confluence_version} \
   ASCIIDOCTOR_DIAGRAM_VERSION=${asciidoctor_diagram_version} \
   ASCIIDOCTOR_DEFMASTERSHIP_VERSION=${asciidoctor_defmastership_version} \
+  DEFMASTERSHIP_VERSION=${defmastership_version} \
   ASCIIDOCTOR_EPUB3_VERSION=${asciidoctor_epub3_version} \
   ASCIIDOCTOR_FB2_VERSION=${asciidoctor_fb2_version} \
   ASCIIDOCTOR_MATHEMATICAL_VERSION=${asciidoctor_mathematical_version} \
@@ -133,6 +135,7 @@ RUN apk add --no-cache --virtual .rubymakedepends \
   "asciidoctor-confluence:${ASCIIDOCTOR_CONFLUENCE_VERSION}" \
   "asciidoctor-diagram:${ASCIIDOCTOR_DIAGRAM_VERSION}" \
   "asciidoctor-defmastership:${ASCIIDOCTOR_DEFMASTERSHIP_VERSION}" \
+  "defmastership:${DEFMASTERSHIP_VERSION}" \
   "asciidoctor-epub3:${ASCIIDOCTOR_EPUB3_VERSION}" \
   "asciidoctor-fb2:${ASCIIDOCTOR_FB2_VERSION}" \
   "asciidoctor-mathematical:${ASCIIDOCTOR_MATHEMATICAL_VERSION}" \
