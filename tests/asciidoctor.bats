@@ -13,6 +13,7 @@ ASCIIDOCTOR_REVEALJS_VERSION=5.2.0
 KRAMDOWN_ASCIIDOC_VERSION=2.1.0
 ASCIIDOCTOR_BIBTEX_VERSION=0.9.0
 ASCIIDOCTOR_KROKI_VERSION=0.10.0
+DEFMASTERSHIP_VERSION=1.1.0
 DOCKER_IMAGE_NAME_TO_TEST="${IMAGE_NAME:-asciidoctor}"
 
 clean_generated_files() {
@@ -326,4 +327,17 @@ teardown() {
       -o /documents/tmp/sample-with-defmastership.html \
       /documents/fixtures/sample-with-defmastership.adoc
   grep 'class="paragraph define' ${TMP_GENERATION_DIR}/sample-with-defmastership.html
+}
+
+@test "defmastership is installed and in version ${DEFMASTERSHIP_VERSION}" {
+  docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" defmastership --version \
+    | grep "defmastership" | grep "${Defmastership_VERSION}"
+}
+
+@test "We can export defmastership definitions in csv" {
+  docker run -t --rm \
+    -v "${BATS_TEST_DIRNAME}":/documents/ \
+    "${DOCKER_IMAGE_NAME_TO_TEST}" \
+      defmastership export \
+      /documents/fixtures/sample-with-defmastership.adoc
 }
