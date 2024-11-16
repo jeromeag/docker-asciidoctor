@@ -3,7 +3,8 @@
 :ASCIIDOCTOR_CONFLUENCE_VERSION: 0.0.2
 :ASCIIDOCTOR_PDF_VERSION: 2.3.19
 :ASCIIDOCTOR_DIAGRAM_VERSION: 2.3.1
-:ASCIIDOCTOR_DEFMASTERSHIP_VERSION: 1.1.0
+:ASCIIDOCTOR_DEFMASTERSHIP_VERSION: 1.1.1
+:DEFMASTERSHIP_VERSION: 1.1.1
 :ASCIIDOCTOR_EPUB3_VERSION: 2.1.3
 :ASCIIDOCTOR_FB2_VERSION: 0.7.0
 :ASCIIDOCTOR_MATHEMATICAL_VERSION: 0.3.5
@@ -39,7 +40,8 @@ This Docker image provides:
 * https://github.com/Mogztter/asciidoctor-kroki[Asciidoctor Kroki] {ASCIIDOCTOR_KROKI_VERSION}
 * https://github.com/asciidoctor/asciidoctor-reducer[Asciidoctor Reducer] {ASCIIDOCTOR_REDUCER_VERSION}
 * https://gitlab.com/defmastership/asciidoctor-rubyeval[Asciidoctor Rubyeval] {ASCIIDOCTOR_RUBYEVAL_VERSION}
-* https://gitlab.com/defmastership/asciidoctor-defmastership[Asciidoctor DefMastership] {ASCIIDOCTOR_DEFMASTERSHIP_VERSION}
+* https://gitlab.com/defmastership/asciidoctor-defmastership[Asciidoctor Defmastership] {ASCIIDOCTOR_DEFMASTERSHIP_VERSION}
+* https://gitlab.com/defmastership/defmastership[Defmastership] {DEFMASTERSHIP_VERSION}
 
 This image uses Alpine Linux {ALPINE_VERSION} as base image.
 
