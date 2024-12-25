@@ -93,8 +93,8 @@ RUN apk add --no-cache \
 
 ARG asciidoctor_confluence_version=0.0.2
 ARG asciidoctor_diagram_version=3.0.1
-ARG asciidoctor_defmastership_version=1.1.2
-ARG defmastership_version=1.1.1
+ARG asciidoctor_defmastership_version=1.2.0
+ARG defmastership_version=1.2.0
 ARG asciidoctor_epub3_version=2.3.0
 ARG asciidoctor_fb2_version=0.8.0
 ARG asciidoctor_mathematical_version=0.3.5
