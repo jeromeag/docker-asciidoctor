@@ -143,7 +143,7 @@ RUN apk add --no-cache --virtual .rubymakedepends \
   "asciidoctor-revealjs:${ASCIIDOCTOR_REVEALJS_VERSION}" \
   "asciidoctor-rubyeval:${ASCIIDOCTOR_RUBYEVAL_VERSION}" \
   coderay \
-  epubcheck-ruby:4.2.4.0 \
+  epubcheck-ruby \
   haml \
   "kramdown-asciidoc:${KRAMDOWN_ASCIIDOC_VERSION}" \
   pygments.rb \
