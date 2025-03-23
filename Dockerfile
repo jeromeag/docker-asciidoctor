@@ -1,7 +1,7 @@
 # Golang version defined in https://github.com/kaishuu0123/erd-go/blob/${ERD_VERSION}/go.mod#L3
 ARG ERD_GOLANG_BUILDER_TAG=1.15-alpine
 ARG A2S_GOLANG_BUILDER_TAG=1.20-alpine3.18
-ARG alpine_version=3.21.0
+ARG alpine_version=3.21.3
 FROM alpine:${alpine_version} AS base
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -143,7 +143,7 @@ RUN apk add --no-cache --virtual .rubymakedepends \
   "asciidoctor-revealjs:${ASCIIDOCTOR_REVEALJS_VERSION}" \
   "asciidoctor-rubyeval:${ASCIIDOCTOR_RUBYEVAL_VERSION}" \
   coderay \
-  epubcheck-ruby:4.2.4.0 \
+  epubcheck-ruby \
   haml \
   "kramdown-asciidoc:${KRAMDOWN_ASCIIDOC_VERSION}" \
   pygments.rb \
