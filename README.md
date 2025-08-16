@@ -34,7 +34,7 @@ This Docker image provides:
 
 - [Asciidoctor Defmastership](https://gitlab.com/defmastership/asciidoctor-defmastership) 1.3.0
 
-- [Defmastership](https://gitlab.com/defmastership/defmastership) 1.3.0
+- [Defmastership](https://gitlab.com/defmastership/defmastership) 1.3.2
 
 This image uses Alpine Linux 3.21.0 as base image.
 
