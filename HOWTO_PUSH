@@ -1,0 +1,4 @@
+# change the name of the image
+docker tag asciidoctor defmastership/asciidoctor
+# effective push
+docker push defmastership/asciidoctor
