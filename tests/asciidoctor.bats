@@ -13,6 +13,7 @@ ASCIIDOCTOR_REVEALJS_VERSION=5.2.0
 KRAMDOWN_ASCIIDOC_VERSION=2.1.1
 ASCIIDOCTOR_BIBTEX_VERSION=0.9.0
 ASCIIDOCTOR_KROKI_VERSION=0.10.0
+ASCIIDOCTOR_DEFMASTERSHIP_VERSION=1.3.1
 DEFMASTERSHIP_VERSION=1.3.2
 DOCKER_IMAGE_NAME_TO_TEST="${IMAGE_NAME:-asciidoctor}"
 
@@ -340,6 +341,11 @@ teardown() {
 @test "defmastership is installed and in version ${DEFMASTERSHIP_VERSION}" {
   docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" defmastership --version \
     | grep "defmastership" | grep "${Defmastership_VERSION}"
+}
+
+@test "asciidoctor-defmastership is installed as a gem with the version ${ASCIIDOCTOR_DEFMASTERSHIP_VERSION}" {
+  docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" gem list \
+    | grep "asciidoctor-defmastership" | grep "${ASCIIDOCTOR_DEFMASTERSHIP_VERSION}"
 }
 
 @test "We can export defmastership definitions in csv" {
