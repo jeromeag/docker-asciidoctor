@@ -32,9 +32,9 @@ This Docker image provides:
 
 - [Asciidoctor Rubyeval](https://gitlab.com/defmastership/asciidoctor-rubyeval) 1.0.0
 
-- [Asciidoctor Defmastership](https://gitlab.com/defmastership/asciidoctor-defmastership) 1.3.1
+- [Asciidoctor Defmastership](https://gitlab.com/defmastership/asciidoctor-defmastership) 1.3.2
 
-- [Defmastership](https://gitlab.com/defmastership/defmastership) 1.3.2
+- [Defmastership](https://gitlab.com/defmastership/defmastership) 1.3.3
 
 This image uses Alpine Linux 3.21.0 as base image.
 
